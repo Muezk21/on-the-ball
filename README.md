@@ -34,3 +34,57 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+# On The Ball Hockey – Web Project
+
+## Overview
+This site promotes and manages my ball hockey program for kids aged 6–12. Built using Next.js with the app router.
+
+## Folder Structure
+- `app/`: Main app pages and layout
+- `components/`: Reusable components like Navbar
+- `public/`: Static files like images
+- `styles/`: Global CSS
+
+## Key Files
+- `app/page.tsx`: Main homepage
+- `app/layout.tsx`: Shared layout (includes Navbar/Footer)
+- `components/Navbar.tsx`: Navigation bar
+- `globals.css`: Base styles
+
+## Current Features
+- Homepage with navbar, welcome message, and slogan
+- Responsive layout
+
+## Next Steps
+- Add "About" and "Contact" pages
+- Set up form for registrations
+- Connect e-commerce/payment platform
+
+## Notes
+- Using Tailwind CSS
+- Port may change from 3000 if it's in use
+- Development: `npm run dev`
+
+## Last worked on:
+**April 11, 2025** — Fixed double text issue, fixed white space at the top issue 
+
+Task for today
+Make some parts of webpage orange, fix linking issue to navbar for about page and then link the rest of the pages. 
+
+# Apr 13 cont. 
+Create additional links; registration, contact
+Update about page mission statement
+
+# Last worked on Apri 13
+Linked each page to function properly (except programs)
+Edited the entire aesthetic with new colors and fonts on every page for consistency 
+Sidenote: learned a little more about reading code when editing footer font, sizing and color.
+
+# What to cont. Apr 13
+Mest fix programs page 404 error; must be called "program"
+Play around with different font styles
+do not add images yet 
+look into domain cost
