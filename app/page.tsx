@@ -1,105 +1,270 @@
+// Import the client components
+import { InteractiveButton, LargeInteractiveButton } from './buttons';
+
 export default function Home() {
   return (
-    <div>
+    <div style={{ 
+      fontFamily: "'Quicksand', sans-serif",
+      margin: 0,
+      padding: 0,
+      backgroundColor: "#fff5eb" // Very light orange background
+    }}>
       {/* Hero Section */}
       <div style={{ 
-        background: "linear-gradient(rgba(42, 42, 42, 0.8), rgba(42, 42, 42, 0.8)), url('/api/placeholder/1600/600')",
+        background: "linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('/api/placeholder/1600/600')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         color: "white",
-        padding: "6rem 2rem",
-        textAlign: "center"
+        padding: "8rem 2rem",
+        textAlign: "center",
+        borderBottom: "4px solid #f37c22" // More visible border
       }}>
         <div className="container">
           <h1 style={{ 
-            fontSize: "3.5rem", 
-            marginBottom: "1rem", 
-            color: "white" 
-          }}>Welcome to On The Ball</h1>
-          <p style={{ 
-            fontSize: "1.2rem", 
-            marginBottom: "2rem", 
-            maxWidth: "800px", 
-            margin: "0 auto 2rem" 
-          }}>The Purest Form Of Hockey</p>
-          <button style={{ 
-            backgroundColor: "#f37c22",
+            fontSize: "4rem", 
+            fontWeight: "300",
+            letterSpacing: "3px",
+            marginBottom: "1.5rem", 
             color: "white",
-            padding: "1rem 2rem",
-            borderRadius: "4px",
-            border: "none",
-            fontSize: "1rem",
-            fontWeight: "bold",
-            cursor: "pointer",
-            transition: "all 0.3s ease"
-          }}>Join Our Program</button>
+            textTransform: "uppercase"
+          }}>ON THE <span style={{ color: "#f37c22" }}>BALL</span></h1>
+          <p style={{ 
+            fontSize: "1.4rem", 
+            fontWeight: "300",
+            letterSpacing: "2px",
+            marginBottom: "3rem", 
+            maxWidth: "700px", 
+            margin: "0 auto 3rem",
+            color: "#e0e0e0"
+          }}>THE PUREST FORM OF HOCKEY</p>
+          
+          {/* Using client component for interactive button */}
+          <InteractiveButton>Join Our Program</InteractiveButton>
         </div>
       </div>
       
-      {/* Features Section */}
-      <div style={{ padding: "5rem 2rem", backgroundColor: "#f5f5f5" }}>
-        <div className="container">
+      {/* Gateway to Hockey Section */}
+      <div style={{ 
+        padding: "7rem 2rem", 
+        backgroundColor: "#fff5eb", 
+        color: "#333",
+        borderBottom: "2px solid #f37c22" // More visible border
+      }}>
+        <div className="container" style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <h2 style={{ 
             textAlign: "center", 
-            marginBottom: "3rem",
+            marginBottom: "5rem",
+            fontWeight: "300",
+            letterSpacing: "2px",
+            fontSize: "2.2rem",
             position: "relative",
-            paddingBottom: "1rem"
+            paddingBottom: "1rem",
+            textTransform: "uppercase",
+            color: "#333"
           }}>
-            Why Choose Our Program
+            THE GATEWAY TO HOCKEY
             <span style={{
               position: "absolute",
               bottom: 0,
               left: "50%",
               transform: "translateX(-50%)",
-              width: "80px",
-              height: "4px",
+              width: "40px",
+              height: "3px",
               backgroundColor: "#f37c22"
             }}></span>
           </h2>
           
           <div style={{ 
-            display: "flex", 
-            flexWrap: "wrap", 
-            justifyContent: "center", 
-            gap: "2rem" 
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: "5rem",
+            marginBottom: "5rem",
+            maxWidth: "900px",
+            margin: "0 auto"
           }}>
-            {/* Feature 1 */}
-            <div style={{ 
-              flex: "1 1 300px",
-              backgroundColor: "white",
-              borderRadius: "8px",
-              padding: "2rem",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-              transition: "transform 0.3s ease, box-shadow 0.3s ease",
-            }}>
-              <h3 style={{ color: "#2a2a2a", marginBottom: "1rem" }}>Expert Coaching</h3>
-              <p style={{ color: "#4a4a4a" }}>Learn from experienced coaches who are passionate about developing young talent in ball hockey.</p>
+            <div style={{ textAlign: "center" }}>
+              {/* Simplified design element */}
+              <div style={{ 
+                margin: "0 auto 2.5rem",
+                padding: "1rem 0",
+                borderTop: "2px solid #f37c22",
+                borderBottom: "2px solid #f37c22",
+                maxWidth: "200px"
+              }}>
+                <span style={{
+                  fontSize: "2rem",
+                  fontWeight: "600",
+                  color: "#333",
+                  letterSpacing: "1px"
+                }}>
+                  #1
+                </span>
+              </div>
+              <h3 style={{ 
+                color: "#333", 
+                marginBottom: "1.5rem",
+                fontWeight: "600",
+                letterSpacing: "1px",
+                fontSize: "1.6rem",
+                textTransform: "uppercase"
+              }}>Most Affordable</h3>
+              <p style={{ 
+                color: "#666", 
+                lineHeight: "1.8",
+                fontSize: "1.1rem"
+              }}>
+                The most accessible entry into hockey for every child. Experience real hockey without the financial barriers of equipment and ice time.
+              </p>
             </div>
             
-            {/* Feature 2 */}
-            <div style={{ 
-              flex: "1 1 300px",
-              backgroundColor: "white",
-              borderRadius: "8px",
-              padding: "2rem",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-              transition: "transform 0.3s ease, box-shadow 0.3s ease",
-            }}>
-              <h3 style={{ color: "#2a2a2a", marginBottom: "1rem" }}>Skill Development</h3>
-              <p style={{ color: "#4a4a4a" }}>Focused training on fundamental skills, game strategy, and teamwork in a supportive environment.</p>
+            <div style={{ textAlign: "center" }}>
+              {/* Simplified design element */}
+              <div style={{ 
+                margin: "0 auto 2.5rem",
+                padding: "1rem 0",
+                borderTop: "2px solid #f37c22",
+                borderBottom: "2px solid #f37c22",
+                maxWidth: "200px"
+              }}>
+                <span style={{
+                  fontSize: "2rem",
+                  fontWeight: "600",
+                  color: "#333",
+                  letterSpacing: "1px"
+                }}>
+                  100%
+                </span>
+              </div>
+              <h3 style={{ 
+                color: "#333", 
+                marginBottom: "1.5rem",
+                fontWeight: "600",
+                letterSpacing: "1px",
+                fontSize: "1.6rem",
+                textTransform: "uppercase"
+              }}>Real Hockey</h3>
+              <p style={{ 
+                color: "#666", 
+                lineHeight: "1.8",
+                fontSize: "1.1rem"
+              }}>
+                Not a substitute – ball hockey delivers the same skills, strategy, teamwork, and excitement that defines true hockey culture.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Impact Stats Section */}
+      <div style={{ 
+        padding: "7rem 2rem", 
+        backgroundColor: "#fff5eb",
+        color: "#333",
+        textAlign: "center",
+        borderBottom: "2px solid #f37c22" // More visible border
+      }}>
+        <div className="container" style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          <h2 style={{ 
+            marginBottom: "5rem",
+            fontWeight: "300",
+            letterSpacing: "2px",
+            fontSize: "2.2rem",
+            textTransform: "uppercase",
+            position: "relative",
+            paddingBottom: "1rem",
+            display: "inline-block",
+            color: "#333"
+          }}>
+            CHANGING THE GAME
+            <span style={{
+              position: "absolute",
+              bottom: 0,
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "40px",
+              height: "3px",
+              backgroundColor: "#f37c22"
+            }}></span>
+          </h2>
+          
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+            gap: "4rem",
+            marginBottom: "3rem",
+            maxWidth: "900px",
+            margin: "0 auto"
+          }}>
+            <div>
+              {/* Simplified design for stats */}
+              <div style={{
+                fontSize: "3.5rem",
+                fontWeight: "600",
+                color: "#333",
+                marginBottom: "1rem",
+                position: "relative",
+                display: "inline-block",
+                paddingBottom: "0.5rem",
+                borderBottom: "2px solid #f37c22"
+              }}>
+                85%
+              </div>
+              <p style={{
+                color: "#666",
+                fontWeight: "400",
+                letterSpacing: "1px",
+                fontSize: "1.1rem"
+              }}>
+                of our players continue to ice hockey with advanced skills
+              </p>
             </div>
             
-            {/* Feature 3 */}
-            <div style={{ 
-              flex: "1 1 300px",
-              backgroundColor: "white",
-              borderRadius: "8px",
-              padding: "2rem",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-              transition: "transform 0.3s ease, box-shadow 0.3s ease",
-            }}>
-              <h3 style={{ color: "#2a2a2a", marginBottom: "1rem" }}>Fun & Safe</h3>
-              <p style={{ color: "#4a4a4a" }}>A positive atmosphere where children can enjoy the game while building confidence and friendships.</p>
+            <div>
+              {/* Simplified design for stats */}
+              <div style={{
+                fontSize: "3.5rem",
+                fontWeight: "600",
+                color: "#333",
+                marginBottom: "1rem",
+                position: "relative",
+                display: "inline-block",
+                paddingBottom: "0.5rem",
+                borderBottom: "2px solid #f37c22"
+              }}>
+                5000+
+              </div>
+              <p style={{
+                color: "#666",
+                fontWeight: "400",
+                letterSpacing: "1px",
+                fontSize: "1.1rem"
+              }}>
+                children developed hockey skills through our program
+              </p>
+            </div>
+            
+            <div>
+              {/* Simplified design for stats */}
+              <div style={{
+                fontSize: "3.5rem",
+                fontWeight: "600",
+                color: "#333",
+                marginBottom: "1rem",
+                position: "relative",
+                display: "inline-block",
+                paddingBottom: "0.5rem",
+                borderBottom: "2px solid #f37c22"
+              }}>
+                12+
+              </div>
+              <p style={{
+                color: "#666",
+                fontWeight: "400",
+                letterSpacing: "1px",
+                fontSize: "1.1rem"
+              }}>
+                years building the future of hockey in our community
+              </p>
             </div>
           </div>
         </div>
@@ -107,27 +272,32 @@ export default function Home() {
       
       {/* Call to Action */}
       <div style={{ 
-        padding: "4rem 2rem", 
-        backgroundColor: "#2a2a2a",
-        color: "white",
+        padding: "7rem 2rem", 
+        backgroundColor: "#fff5eb",
+        color: "#333",
         textAlign: "center"
       }}>
-        <div className="container">
-          <h2 style={{ color: "white", marginBottom: "1.5rem" }}>Ready to Join Our Ball Hockey Program?</h2>
-          <p style={{ maxWidth: "700px", margin: "0 auto 2rem", color: "#e0e0e0" }}>
-            Spaces are limited for our upcoming sessions. Secure your spot today!
+        <div className="container" style={{ maxWidth: "800px", margin: "0 auto" }}>
+          <h2 style={{ 
+            color: "#333", 
+            marginBottom: "2rem",
+            fontWeight: "300",
+            letterSpacing: "2px",
+            fontSize: "2.2rem",
+            textTransform: "uppercase"
+          }}>Join the Revolution in Hockey</h2>
+          <p style={{ 
+            maxWidth: "600px", 
+            margin: "0 auto 3rem", 
+            color: "#666",
+            lineHeight: "1.8",
+            fontSize: "1.1rem"
+          }}>
+            Limited spaces available for our upcoming sessions. Affordable, accessible, and authentic hockey experience for every child.
           </p>
-          <button style={{ 
-            backgroundColor: "#f37c22",
-            color: "white",
-            padding: "1rem 2rem",
-            borderRadius: "4px",
-            border: "none",
-            fontSize: "1rem",
-            fontWeight: "bold",
-            cursor: "pointer",
-            transition: "all 0.3s ease"
-          }}>Register Now</button>
+          
+          {/* Using client component for interactive button */}
+          <LargeInteractiveButton>Register Now</LargeInteractiveButton>
         </div>
       </div>
     </div>

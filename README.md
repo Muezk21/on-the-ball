@@ -84,7 +84,25 @@ Edited the entire aesthetic with new colors and fonts on every page for consiste
 Sidenote: learned a little more about reading code when editing footer font, sizing and color.
 
 # What to cont. Apr 13
-Mest fix programs page 404 error; must be called "program"
+Must fix programs page 404 error; must be called "program"
 Play around with different font styles
 do not add images yet 
-look into domain cost
+
+# Apr 13th,
+Fixed 404 error
+updated program page 
+Quicksand font 
+
+# Cont. Apr 14
+Must fix colour scheme on home page first
+explore different layouts for home page
+implement quicksand font
+check console error on webpage
+
+# April 15
+fixed colour scheme on program and homepage
+changed font of program page to quicksand and tweaked content
+
+# Next steps
+Content on home, program, about needs overhaul
+Adjust home content structure based on what content i come up with
