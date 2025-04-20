@@ -10,8 +10,8 @@ export default function Home() {
       backgroundColor: "#fff5eb" // Very light orange background
     }}>
       {/* Hero Section */}
-      <div style={{ 
-        background: "linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('/api/placeholder/1600/600')",
+      <div style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/images/ali-snipe.png')"
+        ,
         backgroundSize: "cover",
         backgroundPosition: "center",
         color: "white",
@@ -43,7 +43,7 @@ export default function Home() {
         </div>
       </div>
       
-      {/* Gateway to Hockey Section */}
+      {/* Where kids fall in love with the game */}
       <div style={{ 
         padding: "7rem 2rem", 
         backgroundColor: "#fff5eb", 
@@ -62,7 +62,7 @@ export default function Home() {
             textTransform: "uppercase",
             color: "#333"
           }}>
-            THE GATEWAY TO HOCKEY
+            WHERE KIDS FALL IN LOVE WITH THE GAME
             <span style={{
               position: "absolute",
               bottom: 0,
@@ -97,7 +97,7 @@ export default function Home() {
                   color: "#333",
                   letterSpacing: "1px"
                 }}>
-                  #1
+                  IT STARTS WITH BALL HOCKEY
                 </span>
               </div>
               <h3 style={{ 
@@ -107,13 +107,13 @@ export default function Home() {
                 letterSpacing: "1px",
                 fontSize: "1.6rem",
                 textTransform: "uppercase"
-              }}>Most Affordable</h3>
+              }}></h3>
               <p style={{ 
                 color: "#666", 
                 lineHeight: "1.8",
                 fontSize: "1.1rem"
               }}>
-                The most accessible entry into hockey for every child. Experience real hockey without the financial barriers of equipment and ice time.
+                The most accessible entry point into hockey. Experience hockey without the financial barriers of expensive equipment and ice hockey league fees.
               </p>
             </div>
             
@@ -132,7 +132,7 @@ export default function Home() {
                   color: "#333",
                   letterSpacing: "1px"
                 }}>
-                  100%
+                  COMMUNITY FOCUSED
                 </span>
               </div>
               <h3 style={{ 
@@ -142,13 +142,13 @@ export default function Home() {
                 letterSpacing: "1px",
                 fontSize: "1.6rem",
                 textTransform: "uppercase"
-              }}>Real Hockey</h3>
+              }}></h3>
               <p style={{ 
                 color: "#666", 
                 lineHeight: "1.8",
                 fontSize: "1.1rem"
               }}>
-                Not a substitute – ball hockey delivers the same skills, strategy, teamwork, and excitement that defines true hockey culture.
+                We've created a space where Muslim youth can play, grow, and compete without compromising who they are. Our program builds confidence, and empowers young athletes in an environment built just for them.
               </p>
             </div>
           </div>
@@ -207,7 +207,7 @@ export default function Home() {
                 paddingBottom: "0.5rem",
                 borderBottom: "2px solid #f37c22"
               }}>
-                85%
+                100% 
               </div>
               <p style={{
                 color: "#666",
@@ -215,7 +215,7 @@ export default function Home() {
                 letterSpacing: "1px",
                 fontSize: "1.1rem"
               }}>
-                of our players continue to ice hockey with advanced skills
+                Of young hockey fans have access to organized ball hockey leagues and training. 
               </p>
             </div>
             
@@ -231,7 +231,7 @@ export default function Home() {
                 paddingBottom: "0.5rem",
                 borderBottom: "2px solid #f37c22"
               }}>
-                5000+
+                1000's
               </div>
               <p style={{
                 color: "#666",
@@ -239,7 +239,7 @@ export default function Home() {
                 letterSpacing: "1px",
                 fontSize: "1.1rem"
               }}>
-                children developed hockey skills through our program
+                of Ball Hockey players from various backgrounds exist in the GTA alone.
               </p>
             </div>
             
@@ -255,7 +255,7 @@ export default function Home() {
                 paddingBottom: "0.5rem",
                 borderBottom: "2px solid #f37c22"
               }}>
-                12+
+                10+
               </div>
               <p style={{
                 color: "#666",
@@ -285,7 +285,7 @@ export default function Home() {
             letterSpacing: "2px",
             fontSize: "2.2rem",
             textTransform: "uppercase"
-          }}>Join the Revolution in Hockey</h2>
+          }}>EXPANDING THE BOUNDARIES OF HOCKEY</h2>
           <p style={{ 
             maxWidth: "600px", 
             margin: "0 auto 3rem", 

@@ -106,3 +106,36 @@ changed font of program page to quicksand and tweaked content
 # Next steps
 Content on home, program, about needs overhaul
 Adjust home content structure based on what content i come up with
+
+# apr 17
+added background photo to homepage
+edited content on homepage 
+
+# cont,
+edit the rest of content on homepage
+edit program page content
+edit about page content.
+search up unique features to add
+
+# apr 17
+edited rest of homepage content
+edited about content (almost done)
+
+# cont,
+Add real logo to navbar
+fix Navbar.tsx problem
+program page could add a photo
+search up random unique features to add
+keep editing content 
+
+# apr 18
+added logo and cropped it fit seamlessly
+adjusted navbar sizing and spacing
+
+# cont
+update content 
+program page could add a photo
+search up random unique features to add
+
+# Apr 19
+updated content on home, program and about
