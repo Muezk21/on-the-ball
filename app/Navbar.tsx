@@ -5,9 +5,9 @@ import { useState } from "react";
 import Image from "next/image";
 
 export default function Navbar() {
-  // Instead of inline functions that look like hooks, use state for hover
-  const [hoveredLink, setHoveredLink] = useState(null);
-  
+  // Adjusted state type to handle both 'string' and 'null'
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+
   return (
     <nav style={{
       display: "flex",
@@ -22,26 +22,25 @@ export default function Navbar() {
         fontSize: "1.5rem",
         display: "flex",
         alignItems: "center",
-        gap: "1rem", // Increased from 0.5rem
-        marginBottom: "1.5rem" // Increased from 1.2rem
+        gap: "1rem",
+        marginBottom: "1.5rem"
       }}>
-        {/* Enlarged logo with circular mask */}
         <div style={{
-          width: "70px", // Increased from 50px
-          height: "70px", // Increased from 50px
+          width: "70px",
+          height: "70px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           overflow: "hidden",
-          borderRadius: "50%" // Added to create circular mask
+          borderRadius: "50%"
         }}>
           <Image 
             src="/images/On The Ball Logo 3-final.png"
             alt="On The Ball logo"
-            width={70} // Increased from 50
-            height={70} // Increased from 50
+            width={70}
+            height={70}
             style={{
-              objectFit: "cover" // Ensures the image fills the circle
+              objectFit: "cover"
             }}
           />
         </div>
@@ -49,13 +48,13 @@ export default function Navbar() {
           color: "#f37c22", 
           textDecoration: "none",
           fontWeight: "bold", 
-          fontSize: "2rem" // Increased from 1.5rem implicitly via the parent
+          fontSize: "2rem"
         }}>
           ON THE BALL
         </Link>
       </div>
       
-      <div className="nav-links" style={{ display: "flex", gap: "2.5rem" }}> {/* Increased from 2rem */}
+      <div className="nav-links" style={{ display: "flex", gap: "2.5rem" }}>
         {[
           { name: "Home", path: "/" },
           { name: "About", path: "/about" },
@@ -69,7 +68,7 @@ export default function Navbar() {
             style={{
               color: hoveredLink === link.path ? "#f37c22" : "white",
               textDecoration: "none",
-              fontWeight: "normal", // Changed from 500
+              fontWeight: "normal",
               transition: "color 0.3s ease",
               textTransform: "uppercase",
               fontSize: "0.9rem",
