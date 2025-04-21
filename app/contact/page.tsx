@@ -7,14 +7,14 @@ export default function Contact() {
       
       <section style={{ marginTop: "2rem" }}>
         <h2>Get in Touch</h2>
-        <p>We'd love to hear from you! Whether you have questions about our programs, registration, or anything else, feel free to reach out.</p>
+        <p>We'd love to hear from you! Whether you have questions about our program, registration, or anything else, feel free to reach out.</p>
         
         <div style={{ marginTop: "1rem" }}>
           <h3>Contact Information</h3>
           <ul style={{ listStyle: "none", padding: 0 }}>
             <li>Email: info@ontheballhockey.com</li>
-            <li>Phone: (XXX) XXX-XXXX</li>
-            <li>Address: Your Location, City, State/Province, Zip/Postal Code</li>
+            <li>Phone: (647) 667-2343</li>
+            <li></li>
           </ul>
         </div>
       </section>

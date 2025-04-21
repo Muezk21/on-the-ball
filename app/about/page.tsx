@@ -16,8 +16,12 @@ export default function AboutPage() {
           color: "#333",
           textTransform: "uppercase",
           marginBottom: "2rem",
-          textAlign: "center"
-        }}>About <span style={{ color: "#f37c22" }}>On The Ball</span></h1>
+          textAlign: "center",
+          textDecoration: "underline",
+          textUnderlineOffset: "8px",
+          textDecorationThickness: "2px",
+          textDecorationColor: "#f37c22"
+        }}>About On The <span style={{ color: "#f37c22" }}>Ball</span></h1>
       </div>
       
       {/* Our Story Section */}

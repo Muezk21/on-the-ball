@@ -1,57 +1,126 @@
-import React from 'react';
+'use client';
 
-export default function Registration() {
+import React, { useState } from 'react';
+
+export default function RegistrationPage() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [program, setProgram] = useState('');
+  const [age, setAge] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const validateForm = () => {
+    if (!name || !email || !program || !age) {
+      setMessage('Please fill in all fields.');
+      return false;
+    }
+    if (!email.includes('@')) {
+      setMessage('Please enter a valid email.');
+      return false;
+    }
+    return true;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setMessage('');
+
+    if (!validateForm()) return;
+
+    setLoading(true);
+
+    try {
+      const response = await fetch('https://29sdde8fy4.execute-api.us-east-1.amazonaws.com/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, program, age }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setMessage('✅ Registration successful! Please check your email.');
+        setName('');
+        setEmail('');
+        setProgram('');
+      } else {
+        setMessage('❌ Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      setMessage('❌ Network error. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>Registration</h1>
-      
-      <section style={{ marginTop: "2rem" }}>
-        <h2>Current Session</h2>
-        <p>Information about the current or upcoming session dates, times, and locations.</p>
-        
-        <div style={{ marginTop: "1rem" }}>
-          <h3>Registration Fees</h3>
-          <ul>
-            <li>Youth Program: $XXX</li>
-          </ul>
-        </div>
-      </section>
-      
-      <section style={{ marginTop: "2rem" }}>
-        <h2>How to Register</h2>
-        <p>Complete the form below or contact us directly at [email/phone].</p>
-        
-        {/* Basic registration form - you'll want to add functionality later */}
-        <form style={{ marginTop: "1rem" }}>
-          <div style={{ marginBottom: "1rem" }}>
-            <label htmlFor="name" style={{ display: "block", marginBottom: "0.5rem" }}>Full Name:</label>
-            <input type="text" id="name" style={{ width: "100%", padding: "0.5rem" }} />
-          </div>
-          
-          <div style={{ marginBottom: "1rem" }}>
-            <label htmlFor="email" style={{ display: "block", marginBottom: "0.5rem" }}>Email:</label>
-            <input type="email" id="email" style={{ width: "100%", padding: "0.5rem" }} />
-          </div>
-          
-          <div style={{ marginBottom: "1rem" }}>
-            <label htmlFor="program" style={{ display: "block", marginBottom: "0.5rem" }}>Program:</label>
-            <select id="program" style={{ width: "100%", padding: "0.5rem" }}>
-              <option value="">Select a program</option>
-              <option value="Weekday">Weekday Program</option>
-              <option value="Weekend">Weekend Program</option>
-            </select>
-          </div>
-          
-          <button type="submit" style={{ 
-            background: "#0070f3", 
-            color: "white", 
-            padding: "0.5rem 1rem", 
-            border: "none", 
-            borderRadius: "4px",
-            cursor: "pointer"
-          }}>Submit Registration</button>
-        </form>
-      </section>
+    <div style={{ maxWidth: '600px', margin: '2rem auto', padding: '1rem' }}>
+      <h1>Register for the Program</h1>
+
+      <form onSubmit={handleSubmit} style={{ marginTop: '1rem' }}>
+        <label>
+          Full Name:
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            style={{ display: 'block', width: '100%', padding: '0.5rem', marginBottom: '1rem' }}
+          />
+        </label>
+
+        <label>
+          Email:
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            style={{ display: 'block', width: '100%', padding: '0.5rem', marginBottom: '1rem' }}
+          />
+        </label>
+        <label>
+  Child's Age:
+  <input
+    type="number"
+    value={age}
+    onChange={(e) => setAge(e.target.value)}
+    style={{ display: 'block', width: '100%', padding: '0.5rem', marginBottom: '1rem' }}
+    min="6"
+    max="12"
+  />
+</label>
+        <label>
+          Select Program:
+          <select
+            value={program}
+            onChange={(e) => setProgram(e.target.value)}
+            style={{ display: 'block', width: '100%', padding: '0.5rem', marginBottom: '1rem' }}
+          >
+            <option value="">Choose one</option>
+            <option value="Weekday">Weekday Program</option>
+            <option value="Weekend">Weekend Program</option>
+          </select>
+        </label>
+
+        <button
+          type="submit"
+          disabled={loading}
+          style={{
+            backgroundColor: '#0070f3',
+            color: 'white',
+            padding: '0.75rem 1.5rem',
+            border: 'none',
+            borderRadius: '5px',
+            cursor: loading ? 'not-allowed' : 'pointer',
+          }}
+        >
+          {loading ? 'Submitting...' : 'Submit'}
+        </button>
+
+        {message && (
+          <p style={{ marginTop: '1rem', color: message.includes('✅') ? 'green' : 'red' }}>{message}</p>
+        )}
+      </form>
     </div>
   );
 }

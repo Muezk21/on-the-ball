@@ -139,3 +139,22 @@ search up random unique features to add
 
 # Apr 19
 updated content on home, program and about
+updated structure to be consistent throughout each page
+pushed updates on git
+created temp URl on vercel 
+
+# Next 
+Must update structure on rest of pages to match
+update content on those pages
+include pictures where necessary
+look up unique new features to add
+ 
+ # apr 20
+ Set up and deployed AWS API gateway.
+ Set up Lambda functions for serverless logic
+ configured DynamoDB for storage
+
+ # cont
+ must fix age range in registration
+ must fix error registration (start fresh)
+ start host on AWS task

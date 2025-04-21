@@ -47,10 +47,10 @@ export default function Navbar() {
         <Link href="/" style={{ 
           color: "#f37c22", 
           textDecoration: "none",
-          fontWeight: "bold", 
+          fontWeight: "normal", 
           fontSize: "2rem"
         }}>
-          ON THE BALL
+          ON THE BALL PROGRAM
         </Link>
       </div>
       

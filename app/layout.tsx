@@ -38,9 +38,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       
           <div style={{ flex: "1 1 300px" }}>
             <h3 style={{ color: "#f37c22", marginBottom: "1.5rem" }}>Contact Info</h3>
-            <p style={{ marginBottom: "0.5rem" }}>Email: info@ontheballhockey.com</p>
-            <p style={{ marginBottom: "0.5rem" }}>Phone: (555) 123-4567</p>
-            <p>Address: 123 Hockey Drive, Ontario, Canada</p>
+            <p style={{ marginBottom: "0.5rem" }}>Email: ontheballcamp@gmail.com</p>
+            <p style={{ marginBottom: "0.5rem" }}>Phone: (647)-667-2343</p>
+            <p></p>
           </div>
       
           <div style={{ flex: "1 1 300px" }}>
