@@ -61,7 +61,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           paddingTop: "2rem", 
           textAlign: "center" 
         }}>
-          <p>© 2025 On The Ball Hockey. All rights reserved.</p>
+          <p>© 2025 On The Ball Program. All rights reserved.</p>
         </div>
       </div>
     </footer>

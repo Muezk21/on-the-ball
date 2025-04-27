@@ -8,16 +8,35 @@ export default function Program() {
       padding: 0,
       backgroundColor: "#fff5eb" // Light orange background throughout
     }}>
-      <div style={{ padding: "4rem 2rem 2rem", maxWidth: "1200px", margin: "0 auto" }}>
-        <h1 style={{ 
-          fontSize: "2.5rem", 
-          fontWeight: "300",
-          letterSpacing: "2px",
-          color: "#333",
-          textTransform: "uppercase",
-          marginBottom: "2rem",
-          textAlign: "center"
-        }}>Our <span style={{ color: "#f37c22" }}>Ball Hockey</span> Program</h1>
+      {/* Hero Section with Background Image */}
+      <div style={{ 
+        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/images/programpage.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        color: "white",
+        padding: "8rem 2rem",
+        textAlign: "center",
+        borderBottom: "4px solid #f37c22"
+      }}>
+        <div className="container">
+          <h1 style={{ 
+            fontSize: "4rem", 
+            fontWeight: "300",
+            letterSpacing: "3px",
+            marginBottom: "1.5rem", 
+            color: "white",
+            textTransform: "uppercase"
+          }}>Our <span style={{ color: "#f37c22" }}>Ball Hockey</span> Program</h1>
+          <p style={{ 
+            fontSize: "1.4rem", 
+            fontWeight: "300",
+            letterSpacing: "2px",
+            marginBottom: "3rem", 
+            maxWidth: "700px", 
+            margin: "0 auto",
+            color: "#e0e0e0"
+          }}>SKILLS DEVELOPMENT & COMMUNITY BUILDING</p>
+        </div>
       </div>
       
       {/* Affordable Access Section */}

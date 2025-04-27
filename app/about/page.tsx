@@ -8,20 +8,35 @@ export default function AboutPage() {
       padding: 0,
       backgroundColor: "#fff5eb" // Light orange background throughout
     }}>
-      <div style={{ padding: "4rem 2rem 2rem", maxWidth: "1200px", margin: "0 auto" }}>
-        <h1 style={{ 
-          fontSize: "2.5rem", 
-          fontWeight: "300",
-          letterSpacing: "2px",
-          color: "#333",
-          textTransform: "uppercase",
-          marginBottom: "2rem",
-          textAlign: "center",
-          textDecoration: "underline",
-          textUnderlineOffset: "8px",
-          textDecorationThickness: "2px",
-          textDecorationColor: "#f37c22"
-        }}>About On The <span style={{ color: "#f37c22" }}>Ball</span></h1>
+      {/* Hero Section with Background Image */}
+      <div style={{ 
+        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/images/Aboutpage.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        color: "white",
+        padding: "8rem 2rem",
+        textAlign: "center",
+        borderBottom: "4px solid #f37c22"
+      }}>
+        <div className="container">
+          <h1 style={{ 
+            fontSize: "4rem", 
+            fontWeight: "300",
+            letterSpacing: "3px",
+            marginBottom: "1.5rem", 
+            color: "white",
+            textTransform: "uppercase"
+          }}>About ON THE <span style={{ color: "#f37c22" }}>BALL</span></h1>
+          <p style={{ 
+            fontSize: "1.4rem", 
+            fontWeight: "300",
+            letterSpacing: "2px",
+            marginBottom: "3rem", 
+            maxWidth: "700px", 
+            margin: "0 auto",
+            color: "#e0e0e0"
+          }}>OUR JOURNEY IN BALL HOCKEY</p>
+        </div>
       </div>
       
       {/* Our Story Section */}
@@ -79,7 +94,7 @@ export default function AboutPage() {
             lineHeight: "1.8",
             fontSize: "1.1rem"
           }}>
-            To remove the barriers that have kept too many kids on the sidelines. We believe ball hockey is the most realistic and effective entry point into the sport—no ice time, no expensive gear—just opportunity. Our mission is to give every child, especially those from marginalized communities, the chance to fall in love with the game and develop real skills on a real path forward.
+            To remove the barriers that have kept too many kids on the sidelines. We believe ball hockey is the most realistic and effective entry point into the sport—no ice time, no expensive gear—just opportunity. Our mission is to give every child, from all communities, the chance to fall in love with the game and develop real skills on a real path forward.
           </p>
         </div>
       </div>
