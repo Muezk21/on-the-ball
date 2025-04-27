@@ -158,3 +158,7 @@ look up unique new features to add
  must fix age range in registration
  must fix error registration (start fresh)
  start host on AWS task
+
+# Cont
+continue troubleshooting registration error
+continue next AWS step (hosting?)
