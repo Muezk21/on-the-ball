@@ -48,7 +48,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               <Link href="/" style={{ color: "#e0e0e0", textDecoration: "none" }}>Home</Link>
               <Link href="/about" style={{ color: "#e0e0e0", textDecoration: "none" }}>About</Link>
-              <Link href="/programs" style={{ color: "#e0e0e0", textDecoration: "none" }}>Programs</Link>
+              <Link href="/program" style={{ color: "#e0e0e0", textDecoration: "none" }}>Program</Link>
               <Link href="/registration" style={{ color: "#e0e0e0", textDecoration: "none" }}>Registration</Link>
               <Link href="/contact" style={{ color: "#e0e0e0", textDecoration: "none" }}>Contact</Link>
             </div>
