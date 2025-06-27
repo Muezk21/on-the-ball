@@ -3,6 +3,9 @@ import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { Resend } from 'resend';
 
+export const dynamic = "force-dynamic";
+
+
 // Initialize Supabase client
 const supabase = createClient(
   process.env.SUPABASE_URL!,
@@ -11,6 +14,11 @@ const supabase = createClient(
 
 // Initialize Resend client
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+export async function GET() {
+  return NextResponse.json({ message: '✅ GET route works!' });
+}
+
 
 export async function POST(req: Request) {
   try {

@@ -12,6 +12,7 @@
     "@aws-sdk/client-dynamodb": "^3.788.0",
     "@supabase/supabase-js": "^2.50.2",
     "next": "15.3.0",
+    "postgres": "^3.4.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "resend": "^4.6.0"
