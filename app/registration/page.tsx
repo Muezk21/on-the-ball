@@ -31,7 +31,7 @@ export default function RegistrationPage() {
     setLoading(true);
 
     try {
-      const response = await fetch('https://29sdde8fy4.execute-api.us-east-1.amazonaws.com/register', {
+      const response = await fetch('/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, program, age }),
@@ -44,8 +44,9 @@ export default function RegistrationPage() {
         setName('');
         setEmail('');
         setProgram('');
+        setAge('');
       } else {
-        setMessage('❌ Something went wrong. Please try again.');
+        setMessage(`❌ Something went wrong: ${result.error || 'Please try again.'}`);
       }
     } catch (error) {
       setMessage('❌ Network error. Please try again.');
@@ -78,17 +79,19 @@ export default function RegistrationPage() {
             style={{ display: 'block', width: '100%', padding: '0.5rem', marginBottom: '1rem' }}
           />
         </label>
+
         <label>
-  Child's Age:
-  <input
-    type="number"
-    value={age}
-    onChange={(e) => setAge(e.target.value)}
-    style={{ display: 'block', width: '100%', padding: '0.5rem', marginBottom: '1rem' }}
-    min="6"
-    max="12"
-  />
-</label>
+          Child's Age:
+          <input
+            type="number"
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+            style={{ display: 'block', width: '100%', padding: '0.5rem', marginBottom: '1rem' }}
+            min="6"
+            max="12"
+          />
+        </label>
+
         <label>
           Select Program:
           <select
@@ -118,7 +121,9 @@ export default function RegistrationPage() {
         </button>
 
         {message && (
-          <p style={{ marginTop: '1rem', color: message.includes('✅') ? 'green' : 'red' }}>{message}</p>
+          <p style={{ marginTop: '1rem', color: message.includes('✅') ? 'green' : 'red' }}>
+            {message}
+          </p>
         )}
       </form>
     </div>
