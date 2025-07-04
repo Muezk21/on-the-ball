@@ -1,4 +1,8 @@
 // app/api/register/route.ts
+export const dynamic = 'force-dynamic';
+// This is the route for handling API requests
+// It handles GET requests to check if the API is working
+
 export function GET() {
   return new Response('✅ API is working!');
 }
