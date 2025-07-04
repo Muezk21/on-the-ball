@@ -1,10 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    serverActions: true, // safe to leave in
-  },
-  //output: 'standalone'
+  reactStrictMode: true,
+  // remove experimental.serverActions
 };
 
 export default nextConfig;
-
