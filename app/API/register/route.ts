@@ -1,4 +1,10 @@
 // app/api/register/route.ts
+export function GET() {
+  return new Response('✅ API is working!');
+}
+// This is the route for handling registration
+// It handles POST requests to register users for the program
+
 console.log('✅ /api/register POST route hit');
 
 import { NextResponse } from 'next/server';
