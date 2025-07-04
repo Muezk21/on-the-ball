@@ -1,4 +1,6 @@
 // app/api/register/route.ts
+console.log('✅ /api/register POST route hit');
+
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { Resend } from 'resend';
