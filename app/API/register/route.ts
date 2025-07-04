@@ -1,28 +1,24 @@
 // app/api/register/route.ts
+
+// ⏱️ Tell Next.js this route should run dynamically
 export const dynamic = 'force-dynamic';
-// This is the route for handling API requests
-// It handles GET requests to check if the API is working
 
-export function GET() {
-  return new Response('✅ API is working!');
-}
-// This is the route for handling registration
-// It handles POST requests to register users for the program
-
-console.log('✅ /api/register POST route hit');
-
+// ✅ Import dependencies
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { Resend } from 'resend';
 
+// 🔑 Initialize Supabase and Resend clients
 const supabase = createClient(
   process.env.SUPABASE_URL!,
   process.env.SUPABASE_ANON_KEY!
 );
-
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// 🛠️ POST route to handle form submissions
 export async function POST(req: Request) {
+  console.log('✅ /api/register POST route hit');
+
   try {
     const body = await req.json();
     const { name, email, program, age } = body;
@@ -41,9 +37,7 @@ export async function POST(req: Request) {
       },
     ]);
 
-    if (error) {
-      throw error;
-    }
+    if (error) throw error;
 
     await resend.emails.send({
       from: process.env.FROM_EMAIL!,
@@ -59,4 +53,9 @@ export async function POST(req: Request) {
       { status: 500 }
     );
   }
+}
+
+// 🌐 GET route to confirm the API is live
+export async function GET() {
+  return new Response('👋 Hello from GET!');
 }
