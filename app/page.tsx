@@ -1,4 +1,7 @@
 // Import the client components
+'use client';
+
+import Link from 'next/link';
 import { InteractiveButton, LargeInteractiveButton } from './buttons';
 
 export default function Home() {
@@ -38,8 +41,9 @@ export default function Home() {
             color: "#e0e0e0"
           }}>THE PUREST FORM OF HOCKEY</p>
           
-          {/* Using client component for interactive button */}
-          <InteractiveButton>Join Our Program</InteractiveButton>
+          <Link href="/program">
+            <InteractiveButton>Join Our Program</InteractiveButton>
+          </Link>
         </div>
       </div>
       
@@ -296,8 +300,9 @@ export default function Home() {
             Limited spaces available for our upcoming sessions. Affordable, accessible, and authentic hockey experience for every child.
           </p>
           
-          {/* Using client component for interactive button */}
-          <LargeInteractiveButton>Register Now</LargeInteractiveButton>
+          <Link href="/registration">
+            <LargeInteractiveButton>Register Now</LargeInteractiveButton>
+          </Link>
         </div>
       </div>
     </div>
