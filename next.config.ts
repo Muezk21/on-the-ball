@@ -3,7 +3,7 @@ const nextConfig = {
   experimental: {
     serverActions: true, // safe to leave in
   },
-  output: 'standalone'
+  //output: 'standalone'
 };
 
 export default nextConfig;
