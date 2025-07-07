@@ -37,17 +37,36 @@ export async function POST(req: Request) {
       },
     ]);
 
-    if (error) throw error;
+  if (error) {
+    console.error('❌ Supabase insert error:', error);
+    throw error;
+  }
 
-    await resend.emails.send({
-      from: process.env.FROM_EMAIL!,
-      to: email,
-      subject: 'Registration Confirmed',
-      html: `<p>Hi ${name},</p><p>Thanks for registering for the <strong>${program}</strong> program! 🎉</p>`,
-    });
+
+await resend.emails.send({
+  from: process.env.FROM_EMAIL!,
+  to: email,
+  subject: `Welcome to the ${program} Program, ${name}!`,
+  html: `
+    <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: auto;">
+      <h2>Hi ${name},</h2>
+      <p>We're thrilled to have you join the <strong>${program}</strong> program at On The Ball! 🎉</p>
+      <p>Your program is scheduled to begin on <strong>August 1st</strong>.</p>
+      <p>To get familiar with what’s ahead, you can read more about your program here:</p>
+      <p><a href="https://on-the-ball.vercel.app/program" style="color: #0070f3;">View Program Details</a></p>
+      <p>If you have any questions, feel free to reply to this email—we’re here to help every step of the way.</p>
+      <br/>
+      <p>Warm regards,</p>
+      <p><strong>The OTB Team</strong></p>
+      <p style="font-size: 0.9em; color: #777;">On The Ball · Toronto, ON · Canada</p>
+    </div>
+  `,
+});
+
 
     return NextResponse.json({ message: '✅ Registration successful!' });
   } catch (err: any) {
+    console.error('❌ Caught error:', err);
     return NextResponse.json(
       { error: 'Could not save registration', details: err.message },
       { status: 500 }

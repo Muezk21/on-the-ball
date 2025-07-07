@@ -240,3 +240,21 @@ footer {
     padding: 2rem 0;
   }
 }
+/* Glow effect for buttons */
+/* This will apply a glowing effect to buttons with the class 'glow-button' */
+/* You can add this class to any button element to give it a glowing effect */
+
+.glow-button {
+  background-color: #0070f3;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.glow-button:hover {
+  box-shadow: 0 0 10px #0070f3, 0 0 20px #0070f3;;
+  transform: translateY(-2px);
+}

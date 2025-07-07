@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { InteractiveButton, LargeInteractiveButton } from '../buttons';
 
 export default function RegistrationPage() {
   const [name, setName] = useState('');
