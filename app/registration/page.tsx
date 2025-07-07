@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { InteractiveButton, LargeInteractiveButton } from '../buttons';
+import { InteractiveButton } from '../buttons'; // Adjust the path if necessary
 
 export default function RegistrationPage() {
   const [name, setName] = useState('');
@@ -106,20 +106,11 @@ export default function RegistrationPage() {
           </select>
         </label>
 
-        <button
-          type="submit"
-          disabled={loading}
-          style={{
-            backgroundColor: '#0070f3',
-            color: 'white',
-            padding: '0.75rem 1.5rem',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: loading ? 'not-allowed' : 'pointer',
-          }}
-        >
-          {loading ? 'Submitting...' : 'Submit'}
-        </button>
+        <div style={{ marginTop: '1rem' }}>
+          <InteractiveButton type="submit" disabled={loading}>
+            {loading ? 'Submitting...' : 'Submit'}
+          </InteractiveButton>
+        </div>
 
         {message && (
           <p style={{ marginTop: '1rem', color: message.includes('✅') ? 'green' : 'red' }}>

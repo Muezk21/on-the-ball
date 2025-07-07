@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import { InteractiveButton } from '../buttons';
 
 export default function Contact() {
   const [name, setName] = useState('');
@@ -84,22 +85,11 @@ export default function Contact() {
             />
           </div>
 
-          <button 
-            type="submit" 
-            className="glow-button"
-            style={{
-              background: "#0070f3",
-              color: "white",
-              padding: "0.5rem 1rem",
-              border: "none",
-              borderRadius: "4px",
-              cursor: "pointer",
-              boxShadow: '0 0 8px rgba(0, 112, 243, 0.5)',
-              transition: 'box-shadow 0.3s ease',
-            }} 
-          >
-            Send Message 
-          </button>
+          <div style={{ marginTop: '1rem' }}>
+            <InteractiveButton>
+              {status === 'loading' ? 'Sending...' : 'Send Message'}  
+            </InteractiveButton>
+          </div>
 
           {status === 'success' && (
             <p style={{ color: "green", marginTop: "1rem" }}>✅ Message sent successfully!</p>
