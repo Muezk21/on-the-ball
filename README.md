@@ -68,97 +68,136 @@ This site promotes and manages my ball hockey program for kids aged 6–12. Buil
 - Port may change from 3000 if it's in use
 - Development: `npm run dev`
 
-## Last worked on:
-**April 11, 2025** — Fixed double text issue, fixed white space at the top issue 
+DEVELOPMENT TIMELINE
 
-Task for today
-Make some parts of webpage orange, fix linking issue to navbar for about page and then link the rest of the pages. 
+Apr 20
+Set up and deployed AWS API gateway.
 
-# Apr 13 cont. 
-Create additional links; registration, contact
-Update about page mission statement
+Set up Lambda functions for serverless logic
 
-# Last worked on Apri 13
-Linked each page to function properly (except programs)
-Edited the entire aesthetic with new colors and fonts on every page for consistency 
-Sidenote: learned a little more about reading code when editing footer font, sizing and color.
+Configured DynamoDB for storage
 
-# What to cont. Apr 13
-Must fix programs page 404 error; must be called "program"
-Play around with different font styles
-do not add images yet 
+cont
+Must fix age range in registration
 
-# Apr 13th,
-Fixed 404 error
-updated program page 
-Quicksand font 
+Must fix error registration (start fresh)
 
-# Cont. Apr 14
-Must fix colour scheme on home page first
-explore different layouts for home page
-implement quicksand font
-check console error on webpage
+Start host on AWS task
 
-# April 15
-fixed colour scheme on program and homepage
-changed font of program page to quicksand and tweaked content
+Cont
+Continue troubleshooting registration error
 
-# Next steps
-Content on home, program, about needs overhaul
-Adjust home content structure based on what content i come up with
+Continue next AWS step (hosting?)
 
-# apr 17
-added background photo to homepage
-edited content on homepage 
+Apr 19
+Updated content on home, program and about
 
-# cont,
-edit the rest of content on homepage
-edit program page content
-edit about page content.
-search up unique features to add
+Updated structure to be consistent throughout each page
 
-# apr 17
-edited rest of homepage content
-edited about content (almost done)
+Pushed updates on git
 
-# cont,
-Add real logo to navbar
-fix Navbar.tsx problem
-program page could add a photo
-search up random unique features to add
-keep editing content 
+Created temp URL on Vercel
 
-# apr 18
-added logo and cropped it fit seamlessly
-adjusted navbar sizing and spacing
-
-# cont
-update content 
-program page could add a photo
-search up random unique features to add
-
-# Apr 19
-updated content on home, program and about
-updated structure to be consistent throughout each page
-pushed updates on git
-created temp URl on vercel 
-
-# Next 
+Next
 Must update structure on rest of pages to match
-update content on those pages
-include pictures where necessary
-look up unique new features to add
- 
- # apr 20
- Set up and deployed AWS API gateway.
- Set up Lambda functions for serverless logic
- configured DynamoDB for storage
 
- # cont
- must fix age range in registration
- must fix error registration (start fresh)
- start host on AWS task
+Update content on those pages
 
-# Cont
-continue troubleshooting registration error
-continue next AWS step (hosting?)
+Include pictures where necessary
+
+Look up unique new features to add
+
+Apr 18
+Added logo and cropped it to fit seamlessly
+
+Adjusted navbar sizing and spacing
+
+cont
+Update content
+
+Program page could add a photo
+
+Search up random unique features to add
+
+Apr 17
+Edited rest of homepage content
+
+Edited about content (almost done)
+
+cont
+Add real logo to navbar
+
+Fix Navbar.tsx problem
+
+Program page could add a photo
+
+Search up random unique features to add
+
+Keep editing content
+
+Apr 17
+Added background photo to homepage
+
+Edited content on homepage
+
+cont
+Edit the rest of content on homepage
+
+Edit program page content
+
+Edit about page content
+
+Search up unique features to add
+
+Apr 15
+Fixed colour scheme on program and homepage
+
+Changed font of program page to Quicksand and tweaked content
+
+Cont. Apr 14
+Must fix colour scheme on home page first
+
+Explore different layouts for home page
+
+Implement Quicksand font
+
+Check console error on webpage
+
+Apr 13
+Fixed 404 error
+
+Updated program page
+
+Quicksand font
+
+What to cont. Apr 13
+Must fix programs page 404 error (must be called "program")
+
+Play around with different font styles
+
+Do not add images yet
+
+Last worked on Apr 13
+Linked each page to function properly (except programs)
+
+Edited the entire aesthetic with new colors and fonts on every page for consistency
+
+Sidenote: learned a little more about reading code when editing footer font, sizing, and color
+
+Apr 13 cont.
+Created additional links: registration, contact
+
+Updated about page mission statement
+
+April 11, 2025
+Fixed double text issue
+
+Fixed white space at the top issue
+
+Task for that day:
+
+Make some parts of webpage orange
+
+Fix linking issue to navbar for about page
+
+Link the rest of the pages
