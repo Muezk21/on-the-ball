@@ -1,20 +1,6 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
@@ -39,10 +25,26 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 # On The Ball Hockey – Web Project
 
+This is a Next.js project bootstrapped with create-next-app.
+
+## Getting Started
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 ## Overview
 This site promotes and manages my ball hockey program for kids aged 6–12. Built using Next.js with the app router.
 
-## Folder Structure
+## Project Structure
 - `app/`: Main app pages and layout
 - `components/`: Reusable components like Navbar
 - `public/`: Static files like images
@@ -56,17 +58,83 @@ This site promotes and manages my ball hockey program for kids aged 6–12. Buil
 
 ## Current Features
 - Homepage with navbar, welcome message, and slogan
-- Responsive layout
+- Responsive layout with consistent design
+- Interactive buttons with hover animations
+- Registration form with form validation
+- About, Contact, and Program pages
+- Consistent color scheme and typography (Quicksand font)
 
-## Next Steps
-- Add "About" and "Contact" pages
-- Set up form for registrations
-- Connect e-commerce/payment platform
+## Technology Stack
 
-## Notes
-- Using Tailwind CSS
-- Port may change from 3000 if it's in use
-- Development: `npm run dev`
+Framework: Next.js 14+ with App Router
+Styling: Tailwind CSS + custom CSS
+Typography: Quicksand font family
+Backend: Vercel (migrated from AWS)
+Database: Supabase (PostgreSQL with real-time capabilities)
+Authentication: Supabase Auth
+Deployment: Vercel Platform
+
+## Development Notes
+
+Port: Development server runs on port 3000 (may change if in use)
+Deployment: Using npx vercel --prod for quick production deployments
+Git Workflow: Regular commits tracked for documentation and README updates
+
+## Recent Updates (AS OF 07/07/25)
+
+- Fixed InteractiveButton component to properly accept type and disabled props
+- Enhanced button styling with disabled state visual feedback
+- Added proper form submission handling for registration page
+- Fixed homepage routing issue (renamed from Homepage.tsx back to page.tsx)
+- Migrated backend from AWS to Vercel for streamlined deployment
+- Integrated Supabase for database management and authentication
+- Ongoing registration functionality improvements and bug fixes
+
+## UPCOMING FEATURES
+- 
+
+<details>
+<summary>📋 Development Timeline (Click to expand)</summary>
+
+DEVELOPEMENT ACTIVITY (JUNE-JULY)
+
+July 7, 2025
+
+- Update README.md
+- Homepage named back to page.tsx
+- Buttons update contact/reg page
+
+July 6, 2025
+
+- Buttons update on reg and contact page. Incomplete
+
+July 4, 2025
+
+- Next.config update
+- Route.ts update again
+- Added force-dynamic to route.ts
+- "Test route in route.ts"
+
+July 3, 2025
+
+- "Console log on route.ts"
+- "//output line in next.config.ts"
+- Fix next.config for app router deployment
+- Updated next.config.ts to fix rgstr button
+- Home page action buttons: Linked them to reg & program pgs
+
+June 27, 2025
+
+- Pages folder delete
+- Pages folder
+- Registration fix cont
+- Registration fix; final?
+- Error fixes
+
+June 26, 2025
+
+Registration page API fix
+Migration from AWS to Vercel
 
 DEVELOPMENT TIMELINE
 
@@ -190,14 +258,25 @@ Created additional links: registration, contact
 Updated about page mission statement
 
 April 11, 2025
-Fixed double text issue
+- Fixed double text issue
+- Fixed white space at the top issue
+- Task for that day:
+- Make some parts of webpage orange
+- Fix linking issue to navbar for about page
+- Link the rest of the pages
+</details>
 
-Fixed white space at the top issue
+Recent Focus Areas:
 
-Task for that day:
+Fixed InteractiveButton component to properly accept type and disabled props
+Enhanced button styling with disabled state visual feedback
+Added proper form submission handling for registration page
+Fixed homepage routing issue (renamed from Homepage.tsx back to page.tsx)
+Migrated backend from AWS to Vercel for streamlined deployment
+Ongoing registration functionality improvements and bug fixes
 
-Make some parts of webpage orange
+Development Notes
 
-Fix linking issue to navbar for about page
-
-Link the rest of the pages
+Port: Development server runs on port 3000 (may change if in use)
+Deployment: Using npx vercel --prod for quick production deployments
+Git Workflow: Regular commits tracked for documentation and README updates
