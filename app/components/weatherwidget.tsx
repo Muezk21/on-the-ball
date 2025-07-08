@@ -7,7 +7,7 @@ export default function WeatherWidget() {
   const [weather, setWeather] = useState<any>(null);
 
   useEffect(() => {
-    fetch('/api/getWeather')
+    fetch('/api/getweather')
       .then(res => res.json())
       .then(data => {
         console.log("🌤️ Weather API response:", data);
@@ -23,8 +23,9 @@ export default function WeatherWidget() {
       <h4 style={{ color: "#f37c22", marginBottom: "0.5rem" }}>Today's Forecast</h4>
       <p>{weather.forecast_date}</p>
       <p style={{ fontSize: "1.1rem" }}>
-        {weather.temperature}°C<br />
-        🌧️ {weather.precip_chance}% chance of rain
+        {weather.temperature.toFixed(1)}°C<br />
+        {weather.rain_probability}%<br />
+        {weather.weather_description}
       </p>
     </div>
   );
