@@ -9,7 +9,10 @@ export default function WeatherWidget() {
   useEffect(() => {
     fetch('/api/getWeather')
       .then(res => res.json())
-      .then(data => setWeather(data.weather))
+      .then(data => {
+        console.log("🌤️ Weather API response:", data);
+        setWeather(data.weather);
+      })
       .catch(err => console.error("Weather fetch failed:", err));
   }, []);
 
