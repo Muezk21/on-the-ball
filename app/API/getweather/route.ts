@@ -1,4 +1,4 @@
-// app/api/getWeather/route.ts
+// app/api/getweather/route.ts
 
 import { createClient } from '@supabase/supabase-js';
 import { NextResponse } from 'next/server';
