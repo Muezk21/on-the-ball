@@ -20,9 +20,9 @@ export default function WeatherWidget() {
 
   return (
     <div style={{ color: "white", }}>
-      <h3 style={{ color: "#f37c22", marginBottom: "1.5rem" }}>Today's Forecast</h3>
+      <h3 style={{ color: "#f37c22", marginBottom: "1.5rem" }}>TODAY'S FORECAST</h3>
       <p>{weather.forecast_date}</p>
-      <p style={{ fontSize: "1.1rem" }}>
+      <p style={{ fontSize: "1.1rem", color: "white" }}>
         {weather.temperature.toFixed(1)}°C<br />
         {weather.rain_probability}%<br />
         {weather.weather_description}
