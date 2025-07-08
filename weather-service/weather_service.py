@@ -1,3 +1,24 @@
+from twilio.rest import Client
+import os
+
+def send_sms(to_number, message):
+    client = Client(os.getenv("TWILIO_ACCOUNT_SID"), os.getenv("TWILIO_AUTH_TOKEN"))
+    from_number = os.getenv("TWILIO_PHONE_NUMBER")
+
+    try:
+        client.messages.create(
+            body=message,
+            from_=from_number,
+            to=to_number
+        )
+        print(f"✅ Text sent to {to_number}")
+    except Exception as e:
+        print(f"❌ Error sending SMS to {to_number}: {e}")
+
+def clean_phone_number(phone: str) -> str:
+    return ''.join(filter(str.isdigit, phone))
+
+
 import requests
 import smtplib
 from email.mime.text import MIMEText
@@ -10,7 +31,6 @@ from typing import Dict, List, Optional
 import schedule
 import time
 from dotenv import load_dotenv
-
 # Load environment variables from .env file
 load_dotenv()
 
@@ -225,72 +245,44 @@ class WeatherService:
             return []
     
     def send_weather_notification(self, session_name: str, date: str, weather_data: Dict, check_result: Dict) -> bool:
-        """Send email notification to all parents"""
+        """Send sms notification to all parents"""
         try:
-            parent_emails = self.get_parent_emails()
+            parent_phones = self.get_parent_phones()
             
-            if not parent_emails:
-                print("No parent emails found")
+            if not parent_phones:
+                print("No parent phone number found")
                 return False
             
-            # Create email content
-            subject = f"🌤️ Weather Alert: {session_name} - {date}"
-            
-            body = f"""Hi Parents,
+            import textwrap
+            # Prepare the SMS message
+            sms_message = textwrap.dedent(f"""\
+                [OTB ⚠️ WEATHER]
 
-We're monitoring the weather for {session_name} on {date}.
+                {session_name} on {date} may be impacted:
 
-Current Forecast:
-• Temperature: {weather_data['temperature']:.1f}°C
-• Rain Probability: {weather_data['rain_probability']:.0f}%
-• Conditions: {weather_data['weather_description'].title()}
+                🌡️ {weather_data['temperature']:.1f}°C
+                ☔ {weather_data['rain_probability']:.0f}% chance of rain
+                📌 {check_result['reasons'][0] if check_result['reasons'] else 'General concern'}
 
-Weather Concerns:
-"""
+                {"❌ CANCELLED" if check_result['severity'] == "severe" else "⚠️ Possible modifications — stay tuned."}
+                """)
             
-            for reason in check_result['reasons']:
-                body += f"• {reason}\n"
-            
-            if check_result['severity'] == 'severe':
-                body += f"\n⚠️ PROGRAM CANCELLED - Weather conditions are too severe for safe play."
-            else:
-                body += f"\n⚠️ PROGRAM MAY BE MODIFIED - Please check for updates or contact us if you have concerns."
-            
-            body += """
+            # Send sms
+            successful = 0
+            failed = 0
 
-We prioritize the safety and enjoyment of all players. We'll send updates if plans change.
+            for raw_number in parent_phones:
+                try:
+                    phone = "+1" + clean_phone_number(raw_number)  # assuming Canadian numbers
+                    send_sms(phone, sms_message.strip())
+                    successful += 1
+                except Exception as e:
+                    print(f"❌ Failed to text {raw_number}: {e}")
+                    failed += 1
 
-Questions? Reply to this email or contact us directly.
-
-Best regards,
-On The Ball Hockey Program
-"""
-            
-            # Send emails
-            successful_sends = 0
-            failed_sends = 0
-            
-            with smtplib.SMTP(self.smtp_server, self.smtp_port) as server:
-                server.starttls()
-                server.login(self.email_user, self.email_password)
-                
-                for email in parent_emails:
-                    try:
-                        msg = MIMEMultipart()
-                        msg['From'] = self.email_user
-                        msg['To'] = email
-                        msg['Subject'] = subject
-                        msg.attach(MIMEText(body, 'plain'))
-                        
-                        server.send_message(msg)
-                        successful_sends += 1
-                    except Exception as e:
-                        print(f"Failed to send to {email}: {e}")
-                        failed_sends += 1
-            
-            print(f"Weather notification sent to {successful_sends}/{len(parent_emails)} parents ({failed_sends} failed)")
-            return successful_sends > 0
-            
+            print(f"📬 SMS sent to {successful} parents ({failed} failed)")
+            return successful > 0
+           
         except Exception as e:
             print(f"Error sending notifications: {e}")
             return False
