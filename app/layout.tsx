@@ -33,9 +33,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               gap: "2rem"
             }}>
               {/* About */}
-              <div style={{ flex: "1 1 280px" }}>
+              <div style={{ flex: "1 1 280px", backgroundColor: "2a2a2a" }}>
                 <h3 style={{ color: "#f37c22", marginBottom: "1.5rem" }}>ON THE BALL</h3>
-                <p>Developing young players through the purest form of hockey. Our programs focus on skills, teamwork, and fun.</p>
+                <p style={{ color: "white" }}>Developing young players through the purest form of hockey. Our programs focus on skills, teamwork, and fun.</p>
               </div>
 
               {/* Weather */}
@@ -70,7 +70,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               textAlign: "center" 
             }}>
             
-            <p>© 2025 On The Ball Program. All rights reserved.</p>
+            <p style={{ color: "white" }}>© 2025 On The Ball Program. All rights reserved.</p>
             </div>
             </div> {/* Close .container */}
             </footer>
