@@ -39,13 +39,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               </div>
 
               {/* Weather */}
-              <div style={{
-                flex: "1 1 280px",
-                backgroundColor: "#1e1e1e",
-                padding: "1rem",
-                borderRadius: "8px",
-                textAlign: "center"
-              }}>
+              <div style={{ flex: "1 1 280px" }}>
                 <WeatherWidget />
               </div>
 
@@ -53,13 +47,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <div style={{
                 flex: "1 1 280px",
                 border: "1px dashed #f37c22",
-                borderRadius: "8px",
-                minHeight: "120px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center"
-              }}>
-                🤖 Chatbot coming soon
+                }}>
+                <h3 style={{ color: "#f37c22", marginBottom: "1.5rem" }}>CHAT SUPPORT</h3>
+                <p style={{ color: "white" }}> 🤖 Chatbot coming soon</p>
               </div>
             </div>
 

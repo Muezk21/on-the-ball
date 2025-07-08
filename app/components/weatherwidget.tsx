@@ -19,7 +19,7 @@ export default function WeatherWidget() {
   if (!weather) return <p style={{ color: "#f37c22" }}>Loading weather...</p>;
 
   return (
-    <div style={{ color: "white", backgroundColor: "2a2a2a" }}>
+    <div style={{ color: "white", }}>
       <h3 style={{ color: "#f37c22", marginBottom: "1.5rem" }}>Today's Forecast</h3>
       <p>{weather.forecast_date}</p>
       <p style={{ fontSize: "1.1rem" }}>
