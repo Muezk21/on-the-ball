@@ -53,7 +53,7 @@ export default function WeatherWidget() {
       <div>
         {weather.temperature.toFixed(1)}°C<br />
         Chance of rain: {weather.rain_probability}%<br />
-        <p style={{ fontSize: "1.1rem" }}>
+        <p style={{ fontSize: "1.1rem", color: "white" }}>
           {getWeatherEmoji(weather.weather_description)}{" "}
           {weather.weather_description
             .split(" ")
