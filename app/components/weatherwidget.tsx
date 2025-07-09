@@ -1,4 +1,8 @@
 // components/weatherwidget.tsx
+
+import { getWeatherEmoji } from './Emojimapping';
+
+
 'use client';
 import { useEffect, useState } from 'react';
 

@@ -1,4 +1,4 @@
-function getWeatherEmoji(description: string): string {
+export function getWeatherEmoji(description: string): string {
   const desc = description.toLowerCase();
 
   if (desc.includes("clear")) return "☀️";
