@@ -23,32 +23,28 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <footer style={{
           backgroundColor: "#2a2a2a",
           color: "#e0e0e0",
-          padding: "3rem 2rem",
+          padding: "2rem 1rem",
         }}>
           <div className="container">
             <div style={{ 
               display: "flex", 
-              flexWrap: "wrap", 
-              justifyContent: "space-between",
+              flexDirection: "column", //Stack vertically on mobile,,
               gap: "2rem"
             }}>
               {/* About */}
-              <div style={{ flex: "1 1 280px", backgroundColor: "2a2a2a" }}>
-                <h3 style={{ color: "#f37c22", marginBottom: "1.5rem" }}>ON THE BALL</h3>
+              <div style={{ flex: "1" }}>
+                <h3 style={{ color: "#f37c22", marginBottom: "1rem" }}>ON THE BALL</h3>
                 <p style={{ color: "white" }}>Developing young players through the purest form of hockey. Our programs focus on skills, teamwork, and fun.</p>
               </div>
 
               {/* Weather */}
-              <div style={{ flex: "1 1 280px" }}>
+              <div style={{ flex: "1" }}>
                 <WeatherWidget />
               </div>
 
               {/* Chatbot Placeholder */}
-              <div style={{
-                flex: "1 1 280px",
-                border: "1px dashed #f37c22",
-                }}>
-                <h3 style={{ color: "#f37c22", marginBottom: "1.5rem" }}>CHAT SUPPORT</h3>
+              <div style={{ flex: "1"}}>
+                <h3 style={{ color: "#f37c22", marginBottom: "1rem" }}>CHAT SUPPORT</h3>
                 <p style={{ color: "white" }}> 🤖 Chatbot coming soon</p>
               </div>
             </div>
@@ -60,9 +56,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               textAlign: "center" 
             }}>
             
-            <p style={{ color: "white" }}>© 2025 On The Ball Program. All rights reserved.</p>
+            <p style={{ color: "white", margin: "0" }}>© 2025 On The Ball Program. All rights reserved.</p>
             </div>
-            </div> {/* Close .container */}
+            </div>
             </footer>
 
             {/* 🔼 Floating Back to Top Button */}
