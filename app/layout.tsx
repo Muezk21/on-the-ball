@@ -1,6 +1,4 @@
 import BackToTopButton from './components/backtotopbutton';
-
-
 import WeatherWidget from './components/weatherwidget';
 import './globals.css';
 import Navbar from './Navbar';
@@ -23,28 +21,35 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <footer style={{
           backgroundColor: "#2a2a2a",
           color: "#e0e0e0",
-          padding: "2rem 1rem",
+          padding: "3rem 2rem", // Back to original padding
         }}>
           <div className="container">
             <div style={{ 
               display: "flex", 
-              flexDirection: "column", //Stack vertically on mobile,,
+              flexWrap: "wrap", // Back to original - allows wrapping on mobile
+              justifyContent: "space-between", // Back to original - spreads items on desktop
               gap: "2rem"
             }}>
               {/* About */}
-              <div style={{ flex: "1" }}>
-                <h3 style={{ color: "#f37c22", marginBottom: "1rem" }}>ON THE BALL</h3>
+              <div style={{ 
+                flex: "1 1 280px", // Back to original - grows/shrinks with 280px base
+                backgroundColor: "2a2a2a" // Back to original (though this might be a typo)
+              }}>
+                <h3 style={{ color: "#f37c22", marginBottom: "1.5rem" }}>ON THE BALL</h3>
                 <p style={{ color: "white" }}>Developing young players through the purest form of hockey. Our programs focus on skills, teamwork, and fun.</p>
               </div>
 
               {/* Weather */}
-              <div style={{ flex: "1" }}>
+              <div style={{ flex: "1 1 280px" }}>
                 <WeatherWidget />
               </div>
 
               {/* Chatbot Placeholder */}
-              <div style={{ flex: "1"}}>
-                <h3 style={{ color: "#f37c22", marginBottom: "1rem" }}>CHAT SUPPORT</h3>
+              <div style={{
+                flex: "1 1 280px",
+                border: "1px dashed #f37c22", // Back to original dashed border
+              }}>
+                <h3 style={{ color: "#f37c22", marginBottom: "1.5rem" }}>CHAT SUPPORT</h3>
                 <p style={{ color: "white" }}> 🤖 Chatbot coming soon</p>
               </div>
             </div>
@@ -55,15 +60,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               paddingTop: "2rem", 
               textAlign: "center" 
             }}>
-            
-            <p style={{ color: "white", margin: "0" }}>© 2025 On The Ball Program. All rights reserved.</p>
+              <p style={{ color: "white", margin: "0" }}>© 2025 On The Ball Program. All rights reserved.</p>
             </div>
-            </div>
-            </footer>
+          </div>
+        </footer>
 
-            {/* 🔼 Floating Back to Top Button */}
-            <BackToTopButton />
-
+        {/* 🔼 Floating Back to Top Button */}
+        <BackToTopButton />
       </body>
     </html>
   );
