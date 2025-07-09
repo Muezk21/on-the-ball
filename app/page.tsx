@@ -80,7 +80,7 @@ export default function Home() {
           
           <div style={{ 
             display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
             gap: "5rem",
             marginBottom: "5rem",
             maxWidth: "900px",
