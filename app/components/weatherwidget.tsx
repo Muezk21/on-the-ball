@@ -47,8 +47,8 @@ export default function WeatherWidget() {
       <div>TODAY'S FORECAST</div>
       <div>{weather.date}</div> {/* Changed from forecast_date to date */}
       <div>
-        {weather.temperature.toFixed(1)}°C
-        {weather.rain_probability}%
+        {weather.temperature.toFixed(1)}°C<br />
+        Chance of rain: {weather.rain_probability}%<br />
         {weather.weather_description}
       </div>
     </div>
