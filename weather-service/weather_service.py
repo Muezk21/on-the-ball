@@ -124,7 +124,7 @@ class WeatherService:
                         'rain_probability': forecast.get('pop', 0) * 100,  # Convert to percentage
                         'precipitation_mm': forecast.get('rain', {}).get('3h', 0),
                         'weather_description': forecast['weather'][0]['description'],
-                        'date': date
+                        'forecase_date': date
                     }
                     
                     # Cache the weather data

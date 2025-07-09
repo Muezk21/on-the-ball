@@ -1,32 +1,56 @@
 // components/weatherwidget.tsx
-
 'use client';
 import { useEffect, useState } from 'react';
 
+type Weather = {
+  date: string;
+  temperature: number;
+  rain_probability: number;
+  weather_description: string;
+};
+
 export default function WeatherWidget() {
-  const [weather, setWeather] = useState<any>(null);
+  const [weather, setWeather] = useState<Weather | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     fetch('/api/getweather')
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        return res.json();
+      })
       .then(data => {
         console.log("🌤️ Weather API response:", data);
-        setWeather(data.weather);
+        if (data.weather) {
+          setWeather(data.weather);
+        } else {
+          setError("No weather data received");
+        }
+        setLoading(false);
       })
-      .catch(err => console.error("Weather fetch failed:", err));
+      .catch(err => {
+        console.error("Weather fetch failed:", err);
+        setError(err.message);
+        setLoading(false);
+      });
   }, []);
 
-  if (!weather) return <p style={{ color: "#f37c22" }}>Loading weather...</p>;
+  if (loading) return <div>Loading weather...</div>;
+  if (error) return <div>Weather unavailable: {error}</div>;
+  if (!weather) return <div>No weather data</div>;
 
   return (
-    <div style={{ color: "white", }}>
-      <h3 style={{ color: "#f37c22", marginBottom: "1.5rem" }}>TODAY'S FORECAST</h3>
-      <p style={{ color: "white", }}>{weather.forecast_date}</p>
-      <p style={{ fontSize: "1.1rem", color: "white" }}>
-        {weather.temperature.toFixed(1)}°C<br />
-        {weather.rain_probability}%<br />
+    <div>
+      <div>TODAY'S FORECAST</div>
+      <div>{weather.date}</div> {/* Changed from forecast_date to date */}
+      <div>
+        {weather.temperature.toFixed(1)}°C
+        {weather.rain_probability}%
         {weather.weather_description}
-      </p>
+      </div>
     </div>
   );
 }
