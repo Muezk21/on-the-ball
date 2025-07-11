@@ -21,21 +21,15 @@ export default function RegistrationPage() {
     const limitedPhone = phoneNumber.slice(0, 10);
     
     // Format as (XXX) XXX-XXXX for 10 digits
-    if (limitedPhone.length === 10) {
+    if (limitedPhone.length <= 3) {
+      return limitedPhone
+    } else if (limitedPhone.length <= 6) {
+      return `${limitedPhone.slice(0, 3)}-${limitedPhone.slice(3)}`;
+    } else {
       return `(${limitedPhone.slice(0, 3)}) ${limitedPhone.slice(3, 6)}-${limitedPhone.slice(6)}`;
     }
-    
-    // Return partial formatting for incomplete numbers
-    if (limitedPhone.length >= 6) {
-      return `(${limitedPhone.slice(0, 3)}) ${limitedPhone.slice(3, 6)}-${limitedPhone.slice(6)}`;
-    }
-    if (limitedPhone.length >= 3) {
-      return `(${limitedPhone.slice(0, 3)}) ${limitedPhone.slice(3)}`;
-    }
-    
-    return limitedPhone;
   };
-
+   
   // Phone validation function
   const validatePhoneNumber = (phone: string): boolean => {
     const digitsOnly = phone.replace(/[^\d]/g, '');
@@ -48,13 +42,14 @@ export default function RegistrationPage() {
     setPhoneNumber(formatted);
   };
 
+
   const validateForm = () => {
     if (!childname || !age || !parentname || !parentphone || !email || !program) {
       setMessage('Please fill in all fields.');
       return false;
     }
     
-    if (!email.includes('@')) {
+      if (!email.includes('@')) {
       setMessage('Please enter a valid email.');
       return false;
     }
@@ -94,7 +89,8 @@ export default function RegistrationPage() {
         }),
       });
 
-      const result = await response.json();
+
+ const result = await response.json();
 
       if (response.ok) {
         setMessage('✅ Registration successful! Please check your email.');
@@ -160,8 +156,8 @@ export default function RegistrationPage() {
             value={parentphone}
             onChange={handlePhoneChange}
             style={{ display: 'block', width: '100%', padding: '0.5rem', marginBottom: '1rem' }}
-            placeholder="(555) 123-4567"
-            maxLength={14} // Formatted phone number length
+            placeholder="555-123-4567"
+            maxLength={12} // Updated for XXX-XXX-XXXX format
           />
         </label>
 
