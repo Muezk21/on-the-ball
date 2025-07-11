@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { InteractiveButton } from '../buttons'; // Adjust the path if necessary
 
 export default function RegistrationPage() {
@@ -11,7 +11,6 @@ export default function RegistrationPage() {
   const [program, setProgram] = useState('');
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
-  const phoneInputRef = useRef<HTMLInputElement>(null);
 
   // Phone number formatting function
   const formatPhoneNumber = (value: string): string => {
@@ -21,15 +20,12 @@ export default function RegistrationPage() {
     // Limit to 10 digits
     const limitedPhone = phoneNumber.slice(0, 10);
     
-    // Format as (XXX) XXX-XXXX
-    if (limitedPhone.length >= 10) {
+    // Only format when we have exactly 10 digits
+    if (limitedPhone.length === 10) {
       return `(${limitedPhone.slice(0, 3)}) ${limitedPhone.slice(3, 6)}-${limitedPhone.slice(6)}`;
-    } else if (limitedPhone.length >= 6) {
-      return `(${limitedPhone.slice(0, 3)}) ${limitedPhone.slice(3)}`;
-    } else if (limitedPhone.length >= 3) {
-      return `(${limitedPhone.slice(0, 3)}) ${limitedPhone.slice(3)}`;
     }
     
+    // Otherwise just return the digits
     return limitedPhone;
   };
 
@@ -39,45 +35,10 @@ export default function RegistrationPage() {
     return digitsOnly.length === 10;
   };
 
-  // Handle phone number input with proper cursor positioning
+  // Handle phone number input with formatting
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const input = e.target;
-    const cursorPosition = input.selectionStart || 0;
-    const oldValue = parentphone;
-    const newValue = input.value;
-    
-    // Count digits before cursor in old value
-    const oldDigitsBeforeCursor = oldValue.slice(0, cursorPosition).replace(/[^\d]/g, '').length;
-    
-    // Format the new value
-    const formatted = formatPhoneNumber(newValue);
+    const formatted = formatPhoneNumber(e.target.value);
     setPhoneNumber(formatted);
-    
-    // Calculate new cursor position
-    setTimeout(() => {
-      if (phoneInputRef.current) {
-        let newCursorPos = 0;
-        let digitCount = 0;
-        
-        for (let i = 0; i < formatted.length; i++) {
-          if (formatted[i].match(/\d/)) {
-            digitCount++;
-          }
-          if (digitCount <= oldDigitsBeforeCursor) {
-            newCursorPos = i + 1;
-          } else {
-            break;
-          }
-        }
-        
-        // If we're at the end or deleting, adjust accordingly
-        if (newValue.length < oldValue.length || digitCount <= oldDigitsBeforeCursor) {
-          newCursorPos = Math.min(newCursorPos, formatted.length);
-        }
-        
-        phoneInputRef.current.setSelectionRange(newCursorPos, newCursorPos);
-      }
-    }, 0);
   };
 
   const validateForm = () => {
@@ -188,12 +149,11 @@ export default function RegistrationPage() {
         <label>
           Parent's Phone Number:
           <input
-            ref={phoneInputRef}
             type="tel"
             value={parentphone}
             onChange={handlePhoneChange}
             style={{ display: 'block', width: '100%', padding: '0.5rem', marginBottom: '1rem' }}
-            placeholder="(555) 123-4567"
+            placeholder="5551234567"
           />
         </label>
 
