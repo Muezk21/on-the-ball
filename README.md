@@ -73,12 +73,25 @@ Backend: Vercel (migrated from AWS)
 Database: Supabase (PostgreSQL with real-time capabilities)
 Authentication: Supabase Auth
 Deployment: Vercel Platform
+Notifications: Twilio SMS API
 
 ## Development Notes
 
 Port: Development server runs on port 3000 (may change if in use)
 Deployment: Using npx vercel --prod for quick production deployments
 Git Workflow: Regular commits tracked for documentation and README updates
+
+## Recent Updates (AS OF 07/10/25)
+
+- Integrated SMS weather alerts using Twilio
+- Replaced email logic with SMS in send_weather_notification() function
+- Added clean_phone_number() helper to sanitize phone numbers
+- Created /api/getWeather route to fetch daily forecast from Supabase
+- Fixed weather widget in footer to display live forecast
+- Mapped weather descriptions to emojis via getWeatherEmoji() helper
+- Added emojimapping.tsx to centralize emoji logic
+- Improved mobile responsiveness across layout and footer
+- Refactored hamburger menu button with JSX event handling and inline styling
 
 ## Recent Updates (AS OF 07/07/25)
 
@@ -91,13 +104,49 @@ Git Workflow: Regular commits tracked for documentation and README updates
 - Ongoing registration functionality improvements and bug fixes
 
 ## UPCOMING FEATURES
-- 
-
+- Add “notes” field for health concerns or equipment requests
+- Add confirmation screen after registration
+- ADMIN DASHBOARD?
 <details>
 <summary>📋 Development Timeline (Click to expand)</summary>
 
+July 10, 2025
+
+- Phone num formatting fix (multiple commits)
+
+July 9, 2025
+
+- Weather dscr text color change
+- Use client moved to top weatherwidget.tsx
+- Export/import getWeatherEmoji
+- Weather widget emojis
+- Mobile homepage width fix
+- Weather widget format fix
+- Reversed last update
+- Supabase_anon_key --> supabase_key
+
+July 8, 2025
+
+- Weather fix maybe
+- Footer layout fix
+- Weather error fix
+- Large Update: Added mobile-responsiveness to navbar.tsx and globals. Entire website is now mobile friendly with hamburger menu button.
+- Weather widget text colour
+- More formatting for footer
+- Footer format updates. text colour/size
+- Weather widget = precip chance --> rain prob
+- Weatherwidget console log
+- Getweather folder structure fix api/getweather/route.ts
+- Changed email weather notifs to sms
+- Created client component 'backtotopbutton.tsx' for event handler
+- Added back to top button with smooth scrolling in footer
+- Added live weather to footer and space for future chatbot
+- Updated registration page fields. added parent name/number. added validation function to phonenumber
+
+
 July 7, 2025
 
+- weather service creation
 - Update README.md
 - Homepage named back to page.tsx
 - Buttons update contact/reg page
