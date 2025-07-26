@@ -5,6 +5,8 @@ import Navbar from './Navbar';
 import { ReactNode } from 'react';
 import Link from 'next/link';
 
+import ChatWidget from './components/chatwidget';
+
 export const metadata = {
   title: 'On The Ball Hockey',
   description: 'The ultimate ball hockey program',
@@ -50,7 +52,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 border: "1px dashed #f37c22", // Back to original dashed border
               }}>
                 <h3 style={{ color: "#f37c22", marginBottom: "1.5rem" }}>CHAT SUPPORT</h3>
-                <p style={{ color: "white" }}> 🤖 Chatbot coming soon</p>
+                <ChatWidget />
               </div>
             </div>
 
