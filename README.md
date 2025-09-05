@@ -1,6 +1,6 @@
+WEATHER SERVICE CURRENTLY NOT WORKING
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
@@ -21,13 +21,12 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-
-
 # On The Ball Hockey – Web Project
 
 This is a Next.js project bootstrapped with create-next-app.
 
 ## Getting Started
+
 First, run the development server:
 
 ```bash
@@ -41,22 +40,27 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
 ## Overview
+
 This site promotes and manages my ball hockey program for kids aged 6–12. Built using Next.js with the app router.
 
 ## Project Structure
+
 - `app/`: Main app pages and layout
 - `components/`: Reusable components like Navbar
 - `public/`: Static files like images
 - `styles/`: Global CSS
 
 ## Key Files
+
 - `app/page.tsx`: Main homepage
 - `app/layout.tsx`: Shared layout (includes Navbar/Footer)
 - `components/Navbar.tsx`: Navigation bar
 - `globals.css`: Base styles
 
 ## Current Features
+
 - Homepage with navbar, welcome message, and slogan
 - Responsive layout with consistent design
 - Interactive buttons with hover animations
@@ -104,6 +108,7 @@ Git Workflow: Regular commits tracked for documentation and README updates
 - Ongoing registration functionality improvements and bug fixes
 
 ## UPCOMING FEATURES
+
 - Add “notes” field for health concerns or equipment requests
 - Add confirmation screen after registration
 - ADMIN DASHBOARD?
@@ -142,7 +147,6 @@ July 8, 2025
 - Added back to top button with smooth scrolling in footer
 - Added live weather to footer and space for future chatbot
 - Updated registration page fields. added parent name/number. added validation function to phonenumber
-
 
 July 7, 2025
 
@@ -305,6 +309,7 @@ Created additional links: registration, contact
 Updated about page mission statement
 
 April 11, 2025
+
 - Fixed double text issue
 - Fixed white space at the top issue
 - Task for that day:

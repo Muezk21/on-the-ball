@@ -401,4 +401,4 @@ if __name__ == "__main__":
     print("✅ Weather check complete!")
     
     # Uncomment below to run on schedule
-    # weather_service.run_scheduler()
+    weather_service.run_scheduler()
